@@ -5,10 +5,11 @@ import base64
 from openai import OpenAI
 import os
 import tempfile
+import sys
 
 app = Flask(__name__)
 
-client = OpenAI(api_key=os.environ.get("OPENAI_API_KEY", "dd"))
+client = OpenAI(api_key=os.environ.get("OPENAI_API_KEY", sys.argv[1]))
 
 
 ALLOWED_EXTENSIONS = {'mp4', 'avi', 'mov'}
